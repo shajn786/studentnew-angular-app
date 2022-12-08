@@ -19,5 +19,14 @@ addStudent=(datatosend:any)=>
    return this.http.post("http://localhost:8080/add",datatosend)
 }
 
+serachStudent=(datatosend:any)=>
+{
+return this.http.post("http://localhost:8080/search",datatosend)
+}
+
+deleteStudent=(datatosend:any)=>
+{
+  return this.http.post("http://localhost:8080/delete",datatosend)
+}
 
 }
