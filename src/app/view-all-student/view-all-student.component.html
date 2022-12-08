@@ -10,12 +10,16 @@
             </div>
 
 
-            <div class="col col-12 col-sm-12 col-md-6 col-lg-4 col-xl-3 col-xxl-3">
+            <div class="col col-12 col-sm-12 col-md-6 col-lg-4 col-xl-3 col-xxl-3" *ngFor = "let i of data">
                 <div class="card" style="width: 18rem;">
-                    <img height = "300px"src="" class="card-img-top" alt="...">
+                    <img height = "300px"src="https://i.pinimg.com/originals/51/90/10/519010d9ee8167bfe445e616f260f758.png" class="card-img-top" alt="...">
                     <div class="card-body">
-                      <h5 class="card-title">Name : Anu Abhilash</h5>
-                      <p class="card-text">Address : Kottor House</p>     
+                      <h5 class="card-title">Name :{{i.name}}</h5>
+                      <p class="card-text">Roll No : {{i.rollno}}</p>   
+                      <p class="card-text">Admission No : {{i.admno}}</p>   
+                    
+                      <p class="card-text">College  : {{i.college}}</p> 
+                    
                     </div>
                   </div>
             </div>

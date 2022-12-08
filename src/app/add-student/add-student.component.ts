@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ApiService } from '../api.service';
 
 @Component({
   selector: 'app-add-student',
@@ -7,21 +8,31 @@ import { Component } from '@angular/core';
 })
 export class AddStudentComponent {
 
-  studentname=""
+  name=""
   rollno=""
-  admissionno=""
+  admno=""
   mobile=""
   college=""
-  parentname=""
-  parentmobno=""
-  username=""
-  password=""
+
+  constructor(private api : ApiService)
+  {
+
+  }
+  
 
   entry=()=>
   {
-    let data:any = {"studentname":this.studentname,"rollno":this.rollno,"admissionno":this.admissionno,"mobile":this.mobile,
-    "college":this.college,"parentname":this.parentname,"parentmobno":this.parentmobno,"username":this.username,"password":this.password}
+    let data:any = {"name":this.name,"rollno":this.rollno,"admno":this.admno,"mobile":this.mobile,
+    "college":this.college}
     console.log(data)
+    this.api.addStudent(data).subscribe(
+
+     (response:any)=>
+     {
+        console.log(response)
+     }
+
+    )
   }
 
 }
