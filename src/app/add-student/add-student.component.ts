@@ -11,7 +11,7 @@ export class AddStudentComponent {
   name=""
   rollno=""
   admno=""
-  mobile=""
+  
   college=""
 
   constructor(private api : ApiService)
@@ -22,7 +22,7 @@ export class AddStudentComponent {
 
   entry=()=>
   {
-    let data:any = {"name":this.name,"rollno":this.rollno,"admno":this.admno,"mobile":this.mobile,
+    let data:any = {"name":this.name,"rollno":this.rollno,"admno":this.admno,
     "college":this.college}
     console.log(data)
     this.api.addStudent(data).subscribe(
